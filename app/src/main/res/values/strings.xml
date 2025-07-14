@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">GMS Phixit</string>
+
+    <!-- Root request -->
+    <string name="root_title">Root required</string>
+    <string name="root_msg">"The application requires superuser rights to function. "</string>
+    <string name="root_advice">To request click the "Request root"</string>
+    <string name="root_exit">Exit</string>
+    <string name="root_request">Request root</string>
+
+    <!-- Crash Screen -->
+    <string name="crash_title">Error!</string>
+    <string name="crash_advice">Please restart the application.</string>
+    <string name="crash_msg">Unfortunately, a service error occurred and access to the GMS database is impossible.</string>
+    <string name="crash_report">Send report</string>
+    <string name="crash_report_subject" translatable="false">"GMS Phixit has crashed!"</string>
+    <string name="crash_report_failed">Restart app</string>
+    <string name="crash_restart">Restart app</string>
+</resources>
