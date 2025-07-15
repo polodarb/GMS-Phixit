@@ -325,7 +325,7 @@ fun SettingsScreen(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         AsyncImage(
-                            model = "https://github.com/kazumikin.png?size=100",
+                            model = "https://github.com/Reiux.png?size=100",
                             contentDescription = null,
                             error = rememberVectorPainter(Icons.Default.Person),
                             modifier = Modifier
