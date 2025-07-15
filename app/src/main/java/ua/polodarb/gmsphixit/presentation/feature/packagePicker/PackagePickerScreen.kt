@@ -11,25 +11,10 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowRight
-import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.outlined.Keyboard
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material.icons.outlined.Settings
-import androidx.compose.material.icons.rounded.Keyboard
-import androidx.compose.material.icons.rounded.Settings
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
-import androidx.compose.material3.FilledTonalIconButton
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButtonDefaults
-import androidx.compose.material3.LoadingIndicator
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
-import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -101,7 +86,7 @@ fun PackagePickerScreen(
                             disabledIndicatorColor = Color.Transparent
                         )
                     )
-                    
+
                     Spacer(modifier = Modifier.width(8.dp))
 
                     FilledTonalIconButton(
@@ -162,6 +147,7 @@ fun PackagePickerScreen(
                                 value = state.manualPackageName,
                                 onValueChange = { viewModel.onManualPackageChange(it) },
                                 placeholder = { Text("Enter package name") },
+                                maxLines = 1,
                                 modifier = Modifier.fillMaxWidth(),
                                 shape = MaterialTheme.shapes.extraLarge,
                                 colors = TextFieldDefaults.colors(
@@ -206,6 +192,7 @@ fun PackagePickerScreen(
                                     .size(96.dp)
                             )
                         }
+
                         state.sections.isEmpty() && !state.isLoading -> {
                             Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                                 Text(
@@ -215,6 +202,7 @@ fun PackagePickerScreen(
                                 )
                             }
                         }
+
                         else -> {
                             LazyColumn(
                                 Modifier

@@ -117,44 +117,6 @@ class PhixitFlagsService : RootService() {
         Log.i(LOG_TAG, "PhixitFlagsService onBind called")
         try {
             gmsDatabase = openDatabase(DB_PATH_GMS, null, OPEN_READWRITE)
-
-            val testPackage = "com.google.android.inputmethod.latin"
-            val testFlagName = "phixit_test_flag"
-            val testFlagValue = true
-
-//            Log.i(LOG_TAG, "Dumping flags for package: $testPackage")
-//            val existing = dumpFlags(testPackage)
-//            val updated = existing.toMutableMap()
-//
-//            val targetPartitionId = existing.entries.firstOrNull { (_, flags) ->
-//                flags.any { it is BaseFlagModel.BoolFlag }
-//            }?.key
-//
-//            if (targetPartitionId != null) {
-//                Log.i(LOG_TAG, "Found target partition: $targetPartitionId")
-//
-//                val newFlag = BaseFlagModel.BoolFlag(testFlagName, testFlagValue)
-//
-//                val currentFlags = updated[targetPartitionId].orEmpty()
-//
-//                if (currentFlags.none { it.name == testFlagName }) {
-//                    Log.i(LOG_TAG, "Flag $testFlagName not found, preparing to insert...")
-//
-//                    val newFlags = (currentFlags + newFlag).sortedBy {
-//                        it.name.toLongOrNull() ?: Long.MAX_VALUE
-//                    }
-//
-//                    updated[targetPartitionId] = newFlags
-//
-//                    encodeAndSave(testPackage, updated)
-//                    Log.i(LOG_TAG, "Inserted test flag $testFlagName into partition $targetPartitionId")
-//                } else {
-//                    Log.i(LOG_TAG, "Test flag $testFlagName already exists in partition $targetPartitionId")
-//                }
-//            } else {
-//                Log.w(LOG_TAG, "No valid partition found for package: $testPackage")
-//            }
-
         } catch (e: SQLiteException) {
             Log.e(LOG_TAG, "Database not found: ${e.message}", e)
             throw DatabaseNotFoundException("Database not found")

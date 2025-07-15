@@ -4,14 +4,14 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -94,6 +94,7 @@ fun FlagsChangerScreen(
                 TextField(
                     value = state.searchQuery,
                     onValueChange = { viewModel.onSearch(it) },
+                    maxLines = 1,
                     placeholder = { Text("Search flags") },
                     shape = MaterialTheme.shapes.extraLarge,
                     trailingIcon = {
@@ -264,6 +265,7 @@ private fun AddFlagDialog(
                     value = flagName,
                     shape = MaterialTheme.shapes.extraLarge,
                     onValueChange = onFlagNameChange,
+                    maxLines = 1,
                     label = { Text("Flag Name") },
                     modifier = Modifier.fillMaxWidth()
                 )
