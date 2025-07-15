@@ -11,6 +11,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -22,8 +23,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import coil3.compose.AsyncImage
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.collectAsState
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -312,7 +311,7 @@ fun SettingsScreen(
                     shape = RoundedCornerShape(24.dp),
                     onClick = {
                         haptic.performHapticFeedback(HapticFeedbackType.Confirm)
-                        val url = "https://github.com/kazumikin".toUri()
+                        val url = "https://t.me/kazumikin".toUri()
                         val intent = android.content.Intent(
                             android.content.Intent.ACTION_VIEW, url
                         )
