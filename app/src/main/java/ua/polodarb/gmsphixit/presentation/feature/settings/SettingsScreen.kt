@@ -311,7 +311,7 @@ fun SettingsScreen(
                     shape = RoundedCornerShape(24.dp),
                     onClick = {
                         haptic.performHapticFeedback(HapticFeedbackType.Confirm)
-                        val url = "https://t.me/kazumikin".toUri()
+                        val url = "https://github.com/Reiux".toUri()
                         val intent = android.content.Intent(
                             android.content.Intent.ACTION_VIEW, url
                         )
