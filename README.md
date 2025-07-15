@@ -14,7 +14,7 @@
 - Fast flag search, add, and edit
 
 ## ⚠️ Why This App Is Currently Unusable
-### <b style="color:red;">ALL FLAGS RESET AFTER 24 HOURS</b>
+### ⚠️ ALL FLAGS RESET AFTER 24 HOURS
 
 Any changes made to flags are automatically reverted by Google Play Services within 24 hours. This makes it impossible to use the app for persistent flag modifications. The app is released in hope that the community will find a workaround for this limitation.
 
